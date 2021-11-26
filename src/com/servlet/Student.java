@@ -1,3 +1,5 @@
+package com.servlet;
+
 public class Student {
     private String sno;
     private String name;

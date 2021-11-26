@@ -1,3 +1,5 @@
+package com.servlet;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,6 +23,6 @@ public class FirstServlet extends HttpServlet {
         //存储在ServletContext对象中
         this.getServletContext().setAttribute("student", student);
         // 将请求调度到SecondServlet
-        this.getServletContext().getRequestDispatcher("/SecondServlet").forward(request, response);
+        this.getServletContext().getRequestDispatcher("/com.servlet.SecondServlet").forward(request, response);
     }
 }
