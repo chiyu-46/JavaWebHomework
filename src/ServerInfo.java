@@ -1,8 +1,10 @@
 import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Enumeration;
 
+@WebServlet("/ServerInfo")
 public class ServerInfo extends GenericServlet {
     public void service(ServletRequest request,
                         ServletResponse response)
@@ -11,9 +13,10 @@ public class ServerInfo extends GenericServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         ServletContext sc = getServletContext();
-        out.println("<html>");
-        out.println("<body>");
+        out.println("<html lang=\"zh-CN\">");
         out.println("<head>");
+        out.println("<meta charset=\"utf-8\">");
+        out.println("<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\">");
         out.println("<title>获取应用程序服务器端信息</title>");
         out.println("</head>");
         out.println("<body>");
@@ -44,7 +47,7 @@ public class ServerInfo extends GenericServlet {
         out.println("<td>服务器属性</td>");
         out.println("<td>");
         // 获得服务器属性集合
-        Enumeration attributes = sc.getAttributeNames();
+        Enumeration<String> attributes = sc.getAttributeNames();
         while (attributes.hasMoreElements()) {
             String name = (String)attributes.nextElement();
             out.println(name);
