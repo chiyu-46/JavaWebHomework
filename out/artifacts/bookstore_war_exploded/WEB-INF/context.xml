@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context reloadable = "true">
+    <Resource
+            name="jdbc/bookDS"
+            type="javax.sql.DataSource"
+            global="jdbc/bookDS"/>
+</Context>
